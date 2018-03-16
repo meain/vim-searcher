@@ -40,3 +40,8 @@ vnoremap <silent><leader>s y:Google <c-r>"<cr>
 * `o` - open url in default browser
 * `q` - quit
 
+## TODO
+
+* Add syntax highlight for `__googler__` buffer
+* More keymaps to show additional data
+* Clean up code
