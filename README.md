@@ -2,6 +2,9 @@
 
 Easily Google from vim! Nothing else.
 
+## GIF
+![Screencast](https://i.imgur.com/dL7z2PJ.gif)
+
 ## Install
 
 * Install `googler`
