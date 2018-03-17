@@ -13,7 +13,8 @@ raw_search_result = subprocess.Popen(f'googler -n 10 -c us -l en {search_term} -
 search_results = json.loads(raw_search_result)
 data = []
 for el in search_results:
-    data.append( f'{ el["title"] } [##] { el["url"] }' )
+    title = el['title'][:59].ljust(60, ' ')
+    data.append( f'{ title } [##] { el["url"] }' )
 vim.current.buffer[:] = data
 EOF
 endfunction
