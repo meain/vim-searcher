@@ -2,8 +2,8 @@
 
 Easily Google from vim! Nothing else.
 
-## GIF
-![Screencast](https://i.imgur.com/dL7z2PJ.gif)
+## Screnshot
+![Screnshot](https://i.imgur.com/tgooB0Z.png)
 
 ## Install
 
@@ -42,6 +42,6 @@ vnoremap <silent><leader>s y:Google <c-r>"<cr>
 
 ## TODO
 
-* Add syntax highlight for `__googler__` buffer
+* ~~Add syntax highlight for `__googler__` buffer~~
 * More keymaps to show additional data
 * Clean up code
