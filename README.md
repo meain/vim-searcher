@@ -4,6 +4,11 @@ Easily Google from vim! Nothing else.
 
 ## Screnshot
 ![Screnshot](https://i.imgur.com/tgooB0Z.png)
+<details>
+<summary> GIF - a bit outdated </summary>
+<br>
+![GIF](https://i.imgur.com/dL7z2PJ.gif)
+</details>
 
 ## Install
 
