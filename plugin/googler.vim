@@ -6,6 +6,7 @@ term = vim.eval("a:arg")
 vim.command('topleft new __googler__')
 vim.command('set ft=googler')
 vim.command('setlocal buftype=nofile')
+vim.command('setlocal nowrap')
 import json
 import subprocess
 search_term = term
@@ -14,7 +15,7 @@ search_results = json.loads(raw_search_result)
 data = []
 for el in search_results:
     title = el['title'][:59].ljust(60, ' ')  # fix utf-8 spacing issue
-    data.append( f'{ title } [##] { el["url"] }' )
+    data.append( f'{ title }   | { el["url"] }' )
 vim.current.buffer[:] = data
 EOF
 endfunction
@@ -23,7 +24,7 @@ function! GoogleSearchOpen()
 py3 << EOF
 import vim
 current_line = vim.current.line
-url = current_line.split('[##] ')[1]
+url = current_line.split('   | ')[1]
 vim.command(f'silent !open {url}')
 EOF
 endfunction
@@ -32,7 +33,7 @@ function! GoogleSearchCopy()
 py3 << EOF
 import vim
 current_line = vim.current.line
-url = current_line.split('[##] ')[1]
+url = current_line.split('   | ')[1]
 print (f'Copied {url}')
 vim.command(f'silent !echo {url} | pbcopy')
 EOF
