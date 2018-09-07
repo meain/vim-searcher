@@ -26,7 +26,7 @@ Plug 'meain/vim-googler'
 
 ## Commands
 
-This plugin just provides one command `Google`.
+This plugin just provides one command `Google`. This shows the results from google in a buffer on top.
 
 **example**
 ```vim
@@ -41,7 +41,10 @@ vnoremap <silent><leader>s y:Google <c-r>"<cr>
 
 ## Keymaps
 
+Inside the googler buffer, you can
+
 * `c` - copy url to clipboard
+* `m` - copy url in a markdown format - `[search_term](url)`
 * `o` - open url in default browser
 * `q` - quit
 
