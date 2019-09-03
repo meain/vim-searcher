@@ -2,8 +2,8 @@
 
 Easily Google from vim! Nothing else.
 
-## Screnshot
-![Screnshot](https://i.imgur.com/tgooB0Z.png)
+## Screenshot
+![Screenshot](https://i.imgur.com/tgooB0Z.png)
 <details>
 <summary> GIF - a bit outdated </summary>
 <br>
