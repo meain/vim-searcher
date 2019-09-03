@@ -10,6 +10,7 @@ vim.command('topleft new __googler__')
 vim.command('set ft=googler')
 vim.command('setlocal buftype=nofile')
 vim.command('setlocal nowrap')
+vim.command('resize 10')
 import json
 import subprocess
 search_term = term
