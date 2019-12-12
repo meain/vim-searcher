@@ -14,7 +14,8 @@ vim.command('resize 10')
 import json
 import subprocess
 search_term = term
-raw_search_result = subprocess.Popen(f'googler -n 10 -c us -l en {search_term} --json', shell=True, stdout=subprocess.PIPE).stdout.read()
+# could even use ddgr
+raw_search_result = subprocess.Popen(f'googler -n 10 {search_term} --json', shell=True, stdout=subprocess.PIPE).stdout.read()
 search_results = json.loads(raw_search_result)
 vim.command(f'let g:vim_googler_term="{search_term}"')
 data = []
@@ -70,8 +71,8 @@ endfunction
 
 augroup VimGoogler
     au!
-    au FileType googler nnoremap <buffer><silent> o :call GoogleSearchOpen()<cr>
-    au FileType googler nnoremap <buffer><silent> c :call GoogleSearchCopy()<cr>
-    au FileType googler nnoremap <buffer><silent> m :call GoogleSearchMarkdownCopy()<cr>
+    au FileType googler nnoremap <buffer><silent> o :call GoogleSearchOpen() \| :bd<cr>
+    au FileType googler nnoremap <buffer><silent> c :call GoogleSearchCopy() \| :bd<cr>
+    au FileType googler nnoremap <buffer><silent> m :call GoogleSearchMarkdownCopy() \| :bd \| :normal! gv"*p<cr>
     au FileType googler nnoremap <buffer><silent> q :bd<cr>
 augroup end
