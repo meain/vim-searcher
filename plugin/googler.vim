@@ -76,3 +76,6 @@ augroup VimGoogler
     au FileType googler nnoremap <buffer><silent> m :call GoogleSearchMarkdownCopy() \| :bd \| :normal! gv"*p<cr>
     au FileType googler nnoremap <buffer><silent> q :bd<cr>
 augroup end
+
+nnoremap <silent><leader>s viwy:Google <c-r>"<cr>
+vnoremap <silent><leader>s y:Google <c-r>"<cr>
