@@ -12,9 +12,10 @@ Easily Google from vim! Nothing else.
 
 ## Install
 
-* Install `googler`
+* Install `googler` or `ddgr`
 ```bash
 pip install googler
+pip install ddgr
 ```
 
 * Add `vim-googler` using your plugin manager
@@ -24,13 +25,18 @@ pip install googler
 Plug 'meain/vim-googler'
 ```
 
+* By default it uses `googler`, if you wanna use ddgr
+```
+let g:vim_searcher_provider = 'ddgr'
+```
+
 ## Commands
 
-This plugin just provides one command `Google`. This shows the results from google in a buffer on top.
+This plugin just provides one command `Searcher`.
 
 **example**
 ```vim
-:Google github
+:Searcher github
 ```
 
 **or you could do some rempas like**
@@ -51,5 +57,5 @@ Inside the googler buffer, you can
 ## TODO
 
 * ~~Add syntax highlight for `__googler__` buffer~~
-* More keymaps to show additional data
-* Clean up code
+* ~Clean up code~
+* More keymaps to show additional data ??
