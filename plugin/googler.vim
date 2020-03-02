@@ -3,7 +3,7 @@
 
 
 " Check if options are set
-let g:vim_searcher_provider = get(g:, 'vim_searcher_provider', 'ddgr')
+let g:vim_searcher_provider = get(g:, 'vim_searcher_provider', 'googler')
 
 
 function! s:FormShellCommand(search_term)
@@ -27,9 +27,10 @@ function! Searcher(...)
     set ft=searcher
     setlocal buftype=nofile
     setlocal nowrap
-    resize 9
+    resize 10
     exec "0read !".s:FormShellCommand(l:search_term)
     redraw
+    normal! gg
 endfunction
 command! -nargs=1 Searcher call Searcher(<f-args>)
 
@@ -59,8 +60,8 @@ endfunction
 
 augroup VimSearcher
     au!
-    au FileType searcher nnoremap <buffer><silent> o :call SearchOpen() \| :bd<cr>
-    au FileType searcher nnoremap <buffer><silent> c :call SearchCopyUrl() \| :bd<cr>
-    au FileType searcher nnoremap <buffer><silent> m :call SearchMarkdownCopy() \| :bd<cr>
-    au FileType searcher nnoremap <buffer><silent> q :bd<cr>
+    au FileType searcher nnoremap <buffer><silent> o :call SearchOpen() \| :bd!<cr>
+    au FileType searcher nnoremap <buffer><silent> c :call SearchCopyUrl() \| :bd!<cr>
+    au FileType searcher nnoremap <buffer><silent> m :call SearchMarkdownCopy() \| :bd!<cr>
+    au FileType searcher nnoremap <buffer><silent> q :bd!<cr>
 augroup end
