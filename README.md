@@ -14,11 +14,11 @@ pip install googler
 pip install ddgr
 ```
 
-* Add `vim-googler` using your plugin manager
+* Add `vim-searcher` using your plugin manager
 
 ```vim
 " vim-plug
-Plug 'meain/vim-googler'
+Plug 'meain/vim-searcher'
 ```
 
 * By default it uses `googler`, if you wanna use ddgr
@@ -51,7 +51,7 @@ nnoremap <silent><leader>S viwc<C-R>=SearcherMarkdownAutoLinkGenerate(getreg('"'
 
 ## Keymaps
 
-Inside the googler buffer, you can
+Inside the searcher buffer, you can
 
 * `c` - copy url to clipboard
 * `m` - copy url in a markdown format - `[search_term](url)`
