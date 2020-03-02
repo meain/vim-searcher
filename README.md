@@ -44,7 +44,7 @@ vnoremap <silent><leader>s y:Searcher <c-r>"<cr>
 #### Other recommended mappings
 
 If you wanna replace a word or selection with a markdown style link to the top hit:
-```
+```vim
 vnoremap <silent><leader>S c<C-R>=SearcherMarkdownAutoLinkGenerate(getreg('"'))<cr><esc>
 nnoremap <silent><leader>S viwc<C-R>=SearcherMarkdownAutoLinkGenerate(getreg('"'))<cr><esc>
 ```
