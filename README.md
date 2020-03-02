@@ -49,6 +49,8 @@ vnoremap <silent><leader>S c<C-R>=SearcherMarkdownAutoLinkGenerate(getreg('"'))<
 nnoremap <silent><leader>S viwc<C-R>=SearcherMarkdownAutoLinkGenerate(getreg('"'))<cr><esc>
 ```
 
+*Haven't yet figured out how to make this simpler*
+
 ## Keymaps
 
 Inside the searcher buffer, you can
