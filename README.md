@@ -1,18 +1,14 @@
-# vim-googler
+# vim-searcher
 
-Easily Google from vim! Nothing else.
+Easily Search on google or DuckDuckGo from vim! Nothing else.
 
 ## Screenshot
-![Screenshot](https://i.imgur.com/tgooB0Z.png)
-<details>
-<summary> GIF - a bit outdated </summary>
-<br>
-![GIF](https://i.imgur.com/dL7z2PJ.gif)
-</details>
+
+![Screenshot](https://i.imgur.com/uFHSUM6.png)
 
 ## Install
 
-* Install `googler` or `ddgr`
+* Install [googler](https://github.com/jarun/googler) or [ddgr](https://github.com/jarun/ddgr)
 ```bash
 pip install googler
 pip install ddgr
@@ -41,8 +37,16 @@ This plugin just provides one command `Searcher`.
 
 **or you could do some rempas like**
 ```vim
-nnoremap <silent><leader>s :Google <c-r><c-w><cr>
-vnoremap <silent><leader>s y:Google <c-r>"<cr>
+nnoremap <silent><leader>s :Searcher <c-r><c-w><cr>
+vnoremap <silent><leader>s y:Searcher <c-r>"<cr>
+```
+
+#### Other recommended mappings
+
+If you wanna replace a word or selection with a markdown style link to the top hit:
+```
+vnoremap <silent><leader>S c<C-R>=SearcherMarkdownAutoLinkGenerate(getreg('"'))<cr><esc>
+nnoremap <silent><leader>S viwc<C-R>=SearcherMarkdownAutoLinkGenerate(getreg('"'))<cr><esc>
 ```
 
 ## Keymaps
@@ -57,5 +61,9 @@ Inside the googler buffer, you can
 ## TODO
 
 * ~~Add syntax highlight for `__googler__` buffer~~
-* ~Clean up code~
+* ~~Clean up code~~
 * More keymaps to show additional data ??
+
+## Alternatives
+
+- [christoomy/vim-quicklink](https://github.com/christoomey/vim-quicklink)

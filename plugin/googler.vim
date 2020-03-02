@@ -7,10 +7,18 @@ let g:vim_searcher_provider = get(g:, 'vim_searcher_provider', 'googler')
 
 
 function! s:FormShellCommand(search_term)
-    let l:comm = g:vim_searcher_provider." -n 10 ".a:search_term." --json"
+    let l:comm = g:vim_searcher_provider." -n 10 ".a:search_term." --json --exact"
     let l:comm = l:comm." | grep -E '^ *\"(url|title)' | cut -d':' -f2-"
     let l:comm = l:comm." | sed 's|^ *\"||;s|\"$||;s|\",||' | sed 'N;s|\\n|   |'"
     return l:comm
+endfunction
+
+function! SearcherMarkdownAutoLinkGenerate(search_term)
+    let l:comm = g:vim_searcher_provider." -n 1 ".a:search_term." --json --exact"
+    let l:comm = l:comm." | grep -E '^ *\"url' | cut -d':' -f2-"
+    let l:comm = l:comm." | sed 's|^ *\"||;s|\"$||;s|\",||'"
+    let l:comm = l:comm." | xargs -I{} echo '[".a:search_term."]({})'"
+    return trim(system(l:comm))
 endfunction
 
 
